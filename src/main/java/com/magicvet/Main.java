@@ -6,7 +6,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    static String PASSWORD = "defaul";
+    static String PASSWORD = "default";
     static Scanner scanner= new Scanner(System.in);
 
     public static void main(String[] args) {
