@@ -39,7 +39,7 @@ public class Main {
         Client client = new Client();
         client.mail = email;
 
-         System.out.print("First name: ");
+         System.out.println("First name: ");
          client.name = scanner.nextLine();
 
          System.out.print("Last name: ");
