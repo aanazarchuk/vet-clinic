@@ -1,5 +1,4 @@
 package main.java.com.magicvet;
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,6 +10,7 @@ public class Main {
     static String PASSWORD = "default";
     static Scanner scanner = new Scanner(System.in);
     static String Email_Pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+    static String NameLastName_Pattern="^[a-zA-Z\\-]{3,}";
 
     public static void main(String[] args) {
         run();
@@ -23,7 +23,7 @@ public class Main {
     }
 
     static void registerNewClient() {
-        System.out.print("Please provide a client details");
+        System.out.println("Please provide a client details");
         System.out.print("Email: ");
         String email = scanner.nextLine();
 
@@ -31,7 +31,7 @@ public class Main {
             Client client =buildClient(email);
             System.out.println("New client " + client.name+ " " + client.lastname+" ("+client.mail + ")");
         }else{
-            System.out.println("Provide email is valid");
+            System.out.println("Provide email is invalid");
         }
     }
 
@@ -40,12 +40,32 @@ public class Main {
         client.mail = email;
 
          System.out.println("First name: ");
-         client.name = scanner.nextLine();
+         String name = scanner.nextLine();
+
+         if (!isNameValid(name)) {
+             System.out.println("Provide name is invalid");
+         }else{client.name = name;}
 
          System.out.print("Last name: ");
-         client.lastname=scanner.nextLine();
+         String lastName = scanner.nextLine();
+
+         if (!isLastNameValid(lastName)) {
+             System.out.println("Provide Lastname is invalid");
+         }else{client.lastname = lastName;}
 
         return client;
+    }
+
+    static boolean isNameValid(String name){
+        Pattern pattern = Pattern.compile(NameLastName_Pattern);
+        Matcher matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+
+    static boolean isLastNameValid(String lastname){
+        Pattern pattern = Pattern.compile(NameLastName_Pattern);
+        Matcher matcher = pattern.matcher(lastname);
+        return matcher.matches();
     }
 
      static boolean isEmailValid(String email) {
