@@ -18,6 +18,7 @@ public class ApplicationRunner {
 
             Pet pet =petService.registerNewPet();
             pet.setOwnerName(client.getName()+ " " + client.getLastname());
+            client.setPet(pet);
             System.out.println("Pet has been added!");
 
             System.out.println(client);

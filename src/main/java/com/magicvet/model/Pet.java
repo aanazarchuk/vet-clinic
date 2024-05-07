@@ -11,12 +11,11 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet {" +
-                "\n\ttype = " + type +
-                ",\n\tsex = " + sex +
-                ",\n\tname = " + name +
-                ",\n\tage = " + age +
-                ",\n\towner name = " + ownerName +
+        return "\ntype = " + type +
+                " , sex = " + sex +
+                " , name = " + name +
+                " , age = " + age +
+                " , owner name = " + ownerName +
                 "\n}";
     }
 
