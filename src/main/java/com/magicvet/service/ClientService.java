@@ -7,8 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ClientService {
-    private static String Email_Pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-    private static String NameLastName_Pattern="^[a-zA-Z\\-]{3,}";
+    private static final String Email_Pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+    private static final String NameLastName_Pattern="^[a-zA-Z\\-]{3,}";
 
     public Client registerNewClient() {
         Client client = null;
