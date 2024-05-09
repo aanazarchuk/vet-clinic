@@ -7,7 +7,17 @@ public class Pet {
     private  String sex;
     private  String name;
     private  String  age;
+    public static final String baby = "baby";
+    public static final String young = "young";
+    public static final String adult = "adult";
+    public static final String old = "old";
+
     private  String ownerName;
+
+    public Pet(){};
+    public Pet(String age){
+        this.age=age;
+    }
 
     @Override
     public String toString() {
