@@ -11,7 +11,7 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "\ntype = " + type +
+        return "type = " + type +
                 " , sex = " + sex +
                 " , name = " + name +
                 " , age = " + age +
