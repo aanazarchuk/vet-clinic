@@ -12,7 +12,7 @@ public class Dog extends Pet{
     public static final String Xl = "XL";
 
 
-    public String getSize() {
+    public String getSize(String s) {
         return size;
     }
 

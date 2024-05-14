@@ -2,7 +2,7 @@ package main.java.com.magicvet.model;
 
 import java.util.Objects;
 
-public class Pet {
+public abstract class Pet {
     private  String type;
     private  String sex;
     private  String name;
@@ -62,7 +62,7 @@ public class Pet {
         this.sex = sex;
     }
 
-    public String getAge() {
+    public String getAge(String s) {
         return age;
     }
 

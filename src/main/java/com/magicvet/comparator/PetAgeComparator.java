@@ -1,6 +1,6 @@
 package main.java.com.magicvet.comparator;
 
-import main.java.com.magicvet.model.Dog;
+import main.java.com.magicvet.Main;
 import main.java.com.magicvet.model.Pet;
 
 import java.util.Comparator;
@@ -9,7 +9,7 @@ public class PetAgeComparator implements Comparator<Pet> {
 
     @Override
     public int compare(Pet pet1, Pet pet2) {
-        return convertAge(pet1.getAge()) - convertAge(pet2.getAge());
+        return convertAge(pet1.getAge(Main.scanner.nextLine())) - convertAge(pet2.getAge(Main.scanner.nextLine()));
     }
 
     private static int convertAge(String age){

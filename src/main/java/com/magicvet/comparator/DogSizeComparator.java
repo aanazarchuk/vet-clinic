@@ -1,5 +1,6 @@
 package main.java.com.magicvet.comparator;
 
+import main.java.com.magicvet.Main;
 import main.java.com.magicvet.model.Dog;
 
 import java.util.Comparator;
@@ -7,7 +8,7 @@ import java.util.Comparator;
 public class DogSizeComparator implements Comparator<Dog> {
     @Override
     public int compare(Dog dog1, Dog dog2) {
-        return convertSize(dog1.getSize()) - convertSize(dog2.getSize());
+        return convertSize(dog1.getSize(Main.scanner.nextLine())) - convertSize(dog2.getSize(Main.scanner.nextLine()));
     }
 
     private static int convertSize(String size){
