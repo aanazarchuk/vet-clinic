@@ -28,7 +28,7 @@ public class PetService {
         pet.setType(type);
 
         System.out.print("Age(baby,young,adult,old): ");
-        pet.setAge(Main.scanner.nextLine());
+        pet.setAge(Pet.Age.valueOf(Main.scanner.nextLine()));
 
         System.out.print("Name: ");
         pet.setName(Main.scanner.nextLine());
@@ -40,7 +40,8 @@ public class PetService {
 
         if(type.equals(DOG_TYPE)){
             System.out.println("Size(xs/s/m/l/xxl): ");
-            ((Dog)pet).getSize(Main.scanner.nextLine());
+            String size=Main.scanner.nextLine();
+            ((Dog)pet).setSize(Dog.Size.valueOf(size));
             System.out.println();
         }
         return pet;

@@ -6,16 +6,12 @@ public abstract class Pet {
     private  String type;
     private  String sex;
     private  String name;
-    private  String  age;
-    public static final String baby = "baby";
-    public static final String young = "young";
-    public static final String adult = "adult";
-    public static final String old = "old";
+    private  Age age;
 
     private  String ownerName;
 
     public Pet(){};
-    public Pet(String age){
+    public Pet(Age age){
         this.age=age;
     }
 
@@ -37,13 +33,12 @@ public abstract class Pet {
         return Objects.equals(type, pet.type) &&
                 Objects.equals(sex, pet.sex) &&
                 Objects.equals(name, pet.name) &&
-                Objects.equals(age, pet.age) &&
                 Objects.equals(ownerName, pet.ownerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, sex, name, age, ownerName);
+        return Objects.hash(type, sex, name, ownerName);
     }
 
     public String getType() {
@@ -62,13 +57,11 @@ public abstract class Pet {
         this.sex = sex;
     }
 
-    public String getAge(String s) {
-        return age;
-    }
-
-    public void setAge(String  age) {
+    public void setAge(Age age) {
         this.age = age;
     }
+    public Age getAge() {return age;}
+
 
     public String getName() {
         return name;
@@ -83,5 +76,18 @@ public abstract class Pet {
 
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
+    }
+
+    public enum Age{
+        Baby(1),Young(2),Adult(3),Old(4),UNKNOWN(0);
+
+        private final int age;
+        Age(int age){
+            this.age=age;
+        }
+
+        public int getAge() {
+            return age;
+        }
     }
 }
