@@ -5,6 +5,9 @@ import main.java.com.magicvet.model.Cat;
 import main.java.com.magicvet.model.Dog;
 import main.java.com.magicvet.model.Pet;
 
+import java.util.Arrays;
+import java.util.Locale;
+
 public class PetService {
     private static final String DOG_TYPE = "dog";
     private static final String CAT_TYPE = "cat";
@@ -27,8 +30,9 @@ public class PetService {
         Pet pet = type.equals(CAT_TYPE)? new Cat() : new Dog();
         pet.setType(type);
 
-        System.out.print("Age(baby,young,adult,old): ");
-        pet.setAge(Pet.Age.valueOf(Main.scanner.nextLine()));
+        System.out.print("Age(Baby,Young,Adult,Old): ");
+        String age=Main.scanner.nextLine().toUpperCase();
+        pet.setAge(Pet.Age.valueOf(age));
 
         System.out.print("Name: ");
         pet.setName(Main.scanner.nextLine());
@@ -36,11 +40,13 @@ public class PetService {
         System.out.print("Sex(male/female): ");
         pet.setSex(Main.scanner.nextLine());
 
-
-
+        System.out.print("Healthy state (Healthy,Sick,Chronic disease,Trauma: ");
+        String healthstate=Main.scanner.nextLine().toUpperCase();
+        pet.setHealthState(Pet.HealthState.valueOf(healthstate));
+        
         if(type.equals(DOG_TYPE)){
             System.out.println("Size(xs/s/m/l/xxl): ");
-            String size=Main.scanner.nextLine();
+            String size=Main.scanner.nextLine().toUpperCase();
             ((Dog)pet).setSize(Dog.Size.valueOf(size));
             System.out.println();
         }
