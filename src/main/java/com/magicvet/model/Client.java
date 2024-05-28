@@ -1,12 +1,17 @@
 package main.java.com.magicvet.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Client {
+
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
     private String name;
     private String lastname;
     private String mail;
     private Pet pet;
+    private final LocalDateTime registrationDate = LocalDateTime.now();
 
 @Override
 public String toString() {
@@ -14,6 +19,7 @@ public String toString() {
             + "\n\tfirstName = " + name
             + ", lastname = " + lastname
             + ", email = " + mail
+            + ", registration Date = " + registrationDate.format(FORMATTER)
             +"\n\tpet = " + pet
             +"\n}";
 }
