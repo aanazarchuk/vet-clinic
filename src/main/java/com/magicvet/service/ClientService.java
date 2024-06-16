@@ -44,6 +44,10 @@ public class ClientService {
             System.out.println("Provide Lastname is invalid");
         }else{client.setLastname(lastName);}
 
+        System.out.print("Location:");
+        String location=Main.scanner.nextLine().toUpperCase();
+        client.setLocation(Client.Location.valueOf(location));
+
         return client;
     }
 

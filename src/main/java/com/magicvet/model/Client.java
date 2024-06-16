@@ -15,6 +15,7 @@ public class Client {
     private String mail;
     private List<Pet> pets = new ArrayList<>();
     private final LocalDateTime registrationDate = LocalDateTime.now();
+    private Location location;
 
 @Override
 public String toString() {
@@ -23,6 +24,7 @@ public String toString() {
             + ", lastname = " + lastname
             + ", email = " + mail
             + ", registration Date = " + registrationDate.format(FORMATTER)
+            + ", location = " + location
             +"\n\tpets = " + pets
             +"\n}";
 }
@@ -65,11 +67,25 @@ public String toString() {
     }
 
     public String getMail() {return mail;}
-    public void setPet(List<Pet> pets) {this.pets = pets;}
-    public List<Pet> getPet() {return this.pets;}
+
+    public void setPets(List<Pet> pets) {this.pets = pets;}
+
+    public List<Pet> getPets() {return this.pets;}
 
     public void addPet(Pet pet){
        pets.add(pet);
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public enum Location {
+        KYIV,LVIV,ODESA
     }
 }
 
